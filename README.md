@@ -95,7 +95,7 @@ The ID of the object removed, or 'undefined' if not found.
 
 **debug:** Default = false
 
-**defaultElement:** Default = '<div>'
+**defaultElement:** Default = '&lt;div&gt;'
 
 **showClose:** Whether or not to display the 'close' link in the bottom bar. Default = true
 
