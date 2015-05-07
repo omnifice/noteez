@@ -39,7 +39,8 @@ direct.appendMessage('success', 'This message added directly.');
 **message:** The message that you want displayed.
 **extra:** Addition information that you want displayed in the "title" HTML property for mouseover.
 
-####Returns: The ID of the newly created message.
+####Returns: 
+The ID of the newly created message.
 
 ###clearMessages
 **No parameters**
@@ -59,18 +60,28 @@ An object: {type: type, message: msg, extra: extra}
 **No parameters**
 
 ####Returns
-A hash of message objects:
-[
+A hash of message objects.
 
-  id:{type: type, message: msg, extra: extra},
+i.e.:
+```javascript
+var msgs = notes.noteez('getMessages');
+var foo = msgs[id]; // id from somewhere else
+console.log(foo.type);
+console.log(foo.message);
+console.log(foo.extra);
 
-  id:{type: type, message: msg, extra: extra},
+// ...or...
 
-  id:{type: type, message: msg, extra: extra},
+var output = 'Messages:\n';
+$.each(msgs, function(key, val) {
+  output += key + ':\n';
+  $.each(val, function(key2, val2) {
+    output += '\t' + key2 + ': ' + val2 + '\n';
+  });
+});
 
-]
-
-i.e. var foo = msgs[id];
+console.log(output);
+```
 
 ###removeMessage
 ####Parameters
